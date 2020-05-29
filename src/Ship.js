@@ -1,11 +1,20 @@
 function Ship(startingPort) {
-    this.startingPort = startingPort;
+    this.currentPort = startingPort;
     this.passengerNos = 0;
 };
 
 Ship.prototype.setSail = function() {
-//ship.startingport needs to be falsy
-    this.startingPort = "";
+    this.currentPort = "";
+};
+
+/*
+dock(port) {
+    this.currentPort = port;
 }
 
+
+Ship.prototype.dock = function(port) {
+    this.currentPort = port;
+};
+*/
 module.exports = Ship;
