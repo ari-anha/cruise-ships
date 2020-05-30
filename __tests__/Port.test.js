@@ -1,5 +1,5 @@
 /* globals descripe it expect*/
-const Port = require('../src/Port.js')
+const Port = require('../src/Port.js');
 
 describe("Port", () => {
     it("can be instantiated", () => {
