@@ -28,7 +28,10 @@ describe("with ports and an itinerary", () => {
             ships: []
         };
 
-        itinerary = new Itinerary([dover, calais])
+        itinerary = {
+            ports: [dover, calais]
+        };
+
         ship = new Ship(itinerary);
 
     });
@@ -48,6 +51,10 @@ describe("with ports and an itinerary", () => {
         expect(dover.removeShip).toHaveBeenCalledWith(ship);
     });
 
+    it("gets added to port on instantiation", () => {
+        expect(dover.addShip).toHaveBeenCalledWith(ship);
+    });
+
     it("can dock at a different port", () => {
         ship.setSail();
         ship.dock();
@@ -63,8 +70,6 @@ describe("with ports and an itinerary", () => {
         expect(() => ship.setSail()).toThrowError("End of itinerary reached");
     });    
     
-    it("gets added to port on instantiation", () => {
-        expect(dover.addShip).toHaveBeenCalledWith(ship);
-    });
+
 
 });
