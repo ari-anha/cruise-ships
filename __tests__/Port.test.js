@@ -8,8 +8,8 @@ describe("with ships and an itinerary", () => {
 
     beforeEach(() => {
         port = new Port("Dover");
-        titanic = {};
-        queenMary = {};
+        titanic = jest.fn;
+        queenMary = jest.fn;
     });
 
     it("can be instantiated", () => {
